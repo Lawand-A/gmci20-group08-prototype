@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box; 
+	font-family: 'Roboto', sans-serif;
+	font-size: 1px;
+}
+
+.flex-container { /* CSS3 layout mode flexbox */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flex-container > div{
+    margin-bottom: 10px;
+}
+
+.head {
+	font-family: "Brush Script MT";
+    background-color: white;
+    font-size: 80px;
+    padding-top: 150px;
+    max-width: 300px;
+    text-align: center
+}
+#nextButton {
+    justify-content: center;
+    margin-left: 200px;
+    width:100px;
+    height:40px;
+    font-size: 30px;
+    border: 3px solid black;
+}
+#buttonNext {
+    margin-left: 250px;
+    font-size: 20px;
+}
+#buttonCreateandForgot {
+    font-size: 20px;
+}
