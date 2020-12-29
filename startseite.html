@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Study Group Finder 08</title>
+        <link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	</head>
+</head>
+<body>
+<div class="flex-container-horiz-startseite">
+    <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+            <img alt="Einstellungen" src="./util/einstellungen.png">
+        </a>
+    </div>
+    <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+        <img alt="inbox" src="./util/inbox.png">
+    </a>
+    </div>
+    <div class="desktop-1-cols phone-12-cols">
+        <a  href="./empty.html">
+        <img alt="search" src="./util/search.png">
+    </a>
+    </div>
+    <div  class="desktop-3-cols phone-12-cols">
+        <input type="text" id="namediv" placeholder="search" >
+    </div>
+</div>
+<div class="flex-container-horiz-startseite">
+    <div class="flex-container-vert desktop-2-cols phone-6-cols">
+        <img id="profilePic" alt="your picture">
+        <p id="name">my name</p>
+        <p id="subject">my subject</p>
+    </div>
+    <div class="flex-container-vert desktop-5-cols phone-6-cols">
+        <label  id="myDescription" type="text"  style="border: 4px solid black;width: 600px;height: 200px" required></label>
+    </div>
+</div>
+<div class="flex-container-horiz-startseite">
+    <div class="desktop-1-cols phone-6-cols">
+        Add a group
+    </div>
+    <div class="desktop-1-cols phone-6-cols">
+        <a href="#namediv">
+            <img id="add" alt="add a group" src="./util/add.png">
+        </a>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+       var description = localStorage.getItem("description");
+       var profilepicture = localStorage.getItem("profilepicture");
+       var name = localStorage.getItem("item 0");
+       var subject = localStorage.getItem("item 3");
+       /*console.log(elm);
+       console.log(description);
+       console.log(profilepicture.src);*/
+       document.getElementById("name").innerHTML = name;
+       document.getElementById("subject").innerHTML = subject;
+       document.getElementById("myDescription").innerHTML = description;
+       document.getElementById("profilePic").src = profilepicture;
+}
+</script>
+</body>
+</html>
