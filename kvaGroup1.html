@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Study Group Finder 08</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+  </head>
+  <body>
+    <div class="flex-container-horiz-startseite" style="justify-content: left; padding-left: 120px">
+      <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+          <img alt="Einstellungen" src="./util/einstellungen.png" />
+        </a>
+      </div>
+      <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+          <img alt="inbox" src="./util/profile.png" />
+        </a>
+      </div>
+    </div>
+    <div class="flex-container-vert">
+        <div> <img alt="type" src="./util/thi.png"> </img> </div>
+        <div id="groupname"></div>
+        <div id="subject"></div>
+    </div>
+    <div class="flex-container-horiz">
+        <button id="favorite"> favorite</button>
+        <button id="request"> request </button>
+    </div>
+    <div class="flex-container-horiz" style="justify-content: center;">
+        <table>
+            <tr> 
+                <th> 
+                    Participants
+               </th>
+           </tr>
+           <tr>
+               <td> 
+                   <ul>
+                       <li> Aram</li>
+                       <li> Lawand</li>
+                       <li> Cedric</li>
+                       <li> Ahmed </li> 
+                       <li> Max</li>
+                   </ul>
+               </td>
+           </tr>
+        </table>
+        <label style="border: 3px solid black">
+        <p>
+            Time: Sunday: 12:00 - 14:00 <br>
+            Semester: 1 - 2 <br>
+            Max. participants: 20 <br>
+            Information: we look for people who want to collaborate on solving NP complete problems and approximation algorithms.
+        </p>
+    </label>
+    </div>
+ <script>
+     window.onload = function(){
+         var groupname = window.localStorage.getItem("groupName");
+         document.getElementById("groupname").innerHTML = "Groupname: " +groupname;
+         document.getElementById("subject").innerHTML = "Subject: Komplexität von Algorithmen";
+     }
+ </script>
+  </body>
+</html>

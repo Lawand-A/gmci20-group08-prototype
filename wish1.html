@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Study Group Finder 08</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+  </head>
+  <body>
+    <div class="flex-container-horiz-startseite">
+      <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+          <img alt="Einstellungen" src="./util/einstellungen.png" />
+        </a>
+      </div>
+      <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+          <img alt="inbox" src="./util/profile.png" />
+        </a>
+      </div>
+      <div class="desktop-1-cols phone-12-cols">
+        <button style="border: none" onclick="redirect()">
+          <img alt="search" src="./util/search.png" />
+        </button>
+      </div>
+      <div class="desktop-3-cols phone-12-cols">
+        <input type="text" id="namediv" placeholder="search" />
+      </div>
+    </div>
+    <div class="flex-container-vert">
+        <table>
+            <tr>
+                <td> <img alt="kva" src="util/thi.png"> </img> </td>
+                <td> 
+                <div id ="groupname"> Group 1 </div>
+                <div> Time: <Strong>Sunday </Strong>: 12:00 - 14:00</div>
+                </td>
+            <td>
+                <div> 10 participants</div>
+                <div> max 20</div>
+                <div> Semester: 1</div>
+            </td>
+            <td>
+                <button id="details" onclick=" saveData(); goToGroup();"> details</button>
+            </td>
+            </tr>
+            <tr>
+                <td> <img alt="kva" src="util/thi.png" > </img> </td>
+                <td> 
+                <div id ="groupname"> Group 2 </div>
+                <div> Time:<Strong> Wednesday </Strong>: 08:00 - 10:00</div>
+                </td>
+            <td>
+                <div> 4 participants</div>
+                <div> max 6</div>
+                <div> Semester: 4</div>
+            </td>
+            <td>
+                <button id="details" onclick="goToGroup();">  details </button>
+            </td>
+            </tr>
+            <tr>
+                <td> <img alt="kva" src="util/thi.png"> </img> </td>
+                <td> 
+                <div id ="groupname"> Group 3 </div>
+                <div> Time: <Strong> Dienstag </Strong>: 10:00 - 14:00</div>
+                </td>
+            <td>
+                <div> 3 participants</div>
+                <div> max 10</div>
+                <div> Semester: 1</div>
+            </td>
+            <td>
+                <button id="details" onclick="goToGroup();">  details </button>
+            </td>
+            </tr>
+            <tr>
+                <td> <img alt="kva" src="util/thi.png"> </img> </td>
+                <td> 
+                <div id ="groupname"> Group 4 </div>
+                <div> Time: <Strong>Friday </Strong>: 16:00 - 18:00</div>
+                </td>
+            <td>
+                <div> 8 participants</div>
+                <div> max 10</div>
+                <div> Semester: 3</div>
+            </td>
+            <td>
+                <button id="details" onclick="goToGroup();"> details </button>
+            </td>
+            </tr>
+        </table>
+    </div>
+  </body>
+  <script>
+    function goToGroup(){
+        //TODO do for other groups
+        window.location.href = "kvaGroup1.html";
+    }
+    function saveData(){
+        window.localStorage.setItem("groupName",document.getElementById("groupname").textContent);
+    }
+  </script>
+</html>
