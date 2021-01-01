@@ -23,12 +23,12 @@
     </a>
     </div>
     <div class="desktop-1-cols phone-12-cols">
-        <a  href="./empty.html">
+        <button  style="border: none" onclick="redirect()">
         <img alt="search" src="./util/search.png">
-    </a>
+        </button>
     </div>
     <div  class="desktop-3-cols phone-12-cols">
-        <input type="text" id="namediv" placeholder="search" >
+        <input  type="text" id="namediv" placeholder="search" >
     </div>
 </div>
 <div class="flex-container-horiz-startseite">
@@ -52,6 +52,14 @@
     </div>
 </div>
 <script>
+
+    function redirect() {
+        var search = document.getElementById("namediv").value;
+      if (String(search).localeCompare("Komplexität von Algorithmen") == 0){
+            window.location.replace("./wish1.html")
+        }
+      // else {} TODO
+    }
     window.onload = function () {
        var description = localStorage.getItem("description");
        var profilepicture = localStorage.getItem("profilepicture");
@@ -60,8 +68,8 @@
        /*console.log(elm);
        console.log(description);
        console.log(profilepicture.src);*/
-       document.getElementById("name").innerHTML = name;
-       document.getElementById("subject").innerHTML = subject;
+       document.getElementById("name").innerHTML = "My Name" + name;
+       document.getElementById("subject").innerHTML = "My Subject: " + subject;
        document.getElementById("myDescription").innerHTML = description;
        document.getElementById("profilePic").src = profilepicture;
 }
