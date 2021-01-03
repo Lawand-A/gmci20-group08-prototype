@@ -20,8 +20,8 @@
           <img alt="Einstellungen" src="./util/einstellungen.png" />
         </a>
       </div>
-      <div class="desktop-1-cols phone-12-cols">
-        <a href="./empty.html">
+      <div  class="desktop-1-cols phone-12-cols">
+        <a onclick="redirectToStartPage();" >
           <img alt="inbox" src="./util/profile.png" />
         </a>
       </div>
@@ -33,7 +33,7 @@
     </div>
     <div class="flex-container-horiz">
         <button id="favorite"> favorite</button>
-        <button id="request"> request </button>
+        <button id="request" onclick="changeText();"> request </button>
     </div>
     <div class="flex-container-horiz" style="justify-content: center;">
         <table>
@@ -64,6 +64,22 @@
     </label>
     </div>
  <script>
+
+    function redirectToStartPage(){
+      var requested = document.getElementById("request").textContent;
+      if (requested === "request sent"){
+        window.localStorage.setItem("request",requested);
+        var name = document.getElementById("groupname").innerHTML;
+        window.localStorage.setItem("groupname",name.substr(10,name.length));
+        window.location.href = "./startseite.html";
+      }
+      else {
+        window.location.href = "./startseite.html";
+      }
+    }
+    function changeText(){
+      document.getElementById("request").textContent = "request sent";
+    }
      window.onload = function(){
          var groupname = window.localStorage.getItem("groupName");
          document.getElementById("groupname").innerHTML = "Groupname: " +groupname;
