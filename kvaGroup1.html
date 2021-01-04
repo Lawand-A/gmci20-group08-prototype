@@ -67,15 +67,10 @@
 
     function redirectToStartPage(){
       var requested = document.getElementById("request").textContent;
-      if (requested === "request sent"){
         window.localStorage.setItem("request",requested);
         var name = document.getElementById("groupname").innerHTML;
         window.localStorage.setItem("groupname",name.substr(10,name.length));
         window.location.href = "./startseite.html";
-      }
-      else {
-        window.location.href = "./startseite.html";
-      }
     }
     function changeText(){
       document.getElementById("request").textContent = "request sent";

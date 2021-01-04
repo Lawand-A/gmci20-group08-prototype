@@ -42,7 +42,7 @@
 
     <div class="flex-container-horiz-startseite">
       <div class="flex-container-vert desktop-2-cols phone-6-cols">
-        <img id="profilePic" alt="your picture" />
+        <img id="profilePic" alt="my picture" />
         <p id="name">my name</p>
         <p id="subject">my subject</p>
       </div>
@@ -55,6 +55,20 @@
         ></label>
       </div>
     </div>
+    <div class ="flex-container-horiz-startseite">
+      <table id="groupsTable" style="display: none;">
+        <tr>
+          <th> Your groups</th>
+        </tr>
+        <tr>
+          <td>
+          <ul>
+            <a href="kvaGroup1joined.html" > <li id="group"></li> </a>
+          </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
     <div class="flex-container-vert" id="groups"></div>
     <div class="flex-container-horiz-startseite">
       <div class="desktop-1-cols phone-6-cols">Add a group</div>
@@ -66,22 +80,25 @@
     </div>
 
     <script>
+      var groupname;
       function showPopup() {
-        if ((window.localStorage.getItem("request") == "request sent")) {
           document.getElementById("popup").style.display = "flex";
           window.localStorage.clear();
           document.getElementById("inbox").src = "./util/inbox.png";
-        }
-        var name = window.localStorage.getItem("groupname");
         document.getElementById("requestResponse").innerHTML =
-          "Your request to join " + name + " has been accepted";
+          "Your request to join " + groupname + " has been accepted";
       }
       function checkRequests() {
+        var name = window.localStorage.getItem("groupname");
+        groupname = name;
         if (window.localStorage.getItem("request") === "request sent") {
           document.getElementById("inbox").src = "./util/message.png";
+          document.getElementById("groupsTable").style.display = "flex";
+          document.getElementById("group").innerHTML = name;
+        } else{
+          document.getElementById("inbox").src = "./util/inbox.png";
         }
       }
-
       checkRequests();
 
       function redirect() {
@@ -99,7 +116,7 @@
         /*console.log(elm);
        console.log(description);
        console.log(profilepicture.src);*/
-        document.getElementById("name").innerHTML = "My Name" + name;
+        document.getElementById("name").innerHTML = "My Name: " + name;
         document.getElementById("subject").innerHTML = "My Subject: " + subject;
         document.getElementById("myDescription").innerHTML = description;
         document.getElementById("profilePic").src = profilepicture;
@@ -109,6 +126,7 @@
      button.onclick = function close(){
         document.getElementById("popup").style.display = "none";
       };
+      window.localStorage.setItem("name",groupname);
     </script>
   </body>
 </html>
