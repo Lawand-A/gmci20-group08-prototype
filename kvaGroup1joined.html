@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Study Group Finder 08</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+  </head>
+  <body>
+    <div class="flex-container-horiz-startseite" style="justify-content: left; padding-left: 120px">
+      <div class="desktop-1-cols phone-12-cols">
+        <a href="./empty.html">
+          <img alt="Einstellungen" src="./util/einstellungen.png" />
+        </a>
+      </div>
+      <div  class="desktop-1-cols phone-12-cols">
+        <a onclick="redirectToStartPage();" >
+          <img alt="inbox" src="./util/profile.png" />
+        </a>
+      </div>
+    </div>
+    <div class="flex-container-vert">
+        <div> <img alt="type" src="./util/thi.png"> </img> </div>
+        <div id="groupname"></div>
+        <div id="subject"></div>
+    </div>
+    <div class="flex-container-vert">
+        <table style="width: 70%">
+            <tr>
+                <th> <a  style="color: red" onclick="showInfo();"> Informations </a> </th>
+                <th> <a onclick="showPosts();">Posts </a></th>
+                <th> <a onclick="showFiles();">Files </a></th>
+                <th> <a onclick="showTasks();">Tasks </a></th>
+            </tr>
+        </table>
+    </div>
+    <div id="infoPanel" class="flex-container-horiz-startseite" style="display: none;">
+        <table>
+            <tr> 
+                <th> 
+                    Participants
+               </th>
+           </tr>
+           <tr>
+               <td> 
+                   <ul>
+                       <li> Aram</li>
+                       <li> Lawand</li>
+                       <li> Cedric</li>
+                       <li> Ahmed </li> 
+                       <li> Max</li>
+                   </ul>
+               </td>
+           </tr>
+        </table>
+        <label style="border: 3px solid black">
+            <p>
+                Time: Sunday: 12:00 - 14:00 <br>
+                Semester: 1 - 2 <br>
+                Max. participants: 20 <br>
+                Information: we look for people who want to collaborate on solving NP complete problems and approximation algorithms.
+            </p>
+        </label>
+    </div>
+
+  <div id="postsPanel" class="flex-container-horiz-startseite" style="display: none;">
+      <ul>
+          <li> 
+              <h> <strong> From Max </strong> </h>
+              <p> Hello guys, I need help in the exercice 2 of the kva-sheet. Write me back in the study group thanks.</p>
+          </li>
+          <li>
+              <h> <strong>From Aram </strong></h>
+              <p> Hey, I need help in enhancing the user interface of the software project. I think we should meet again. Pm me please. </p>
+          </li>
+      </ul>
+  </div>
+
+  <div id="filesPanel" class="flex-container-horiz" style="display: none; padding-top: 100px" >
+    <ul id="files">
+        <h> <strong> Files: </strong></h>
+        <li  type="file"> </li>
+    </ul>
+    <p> upload: <input onchange="loadFile(event)" type="file"> <p>
+    <button> delete</button>
+  </div>
+
+  <div id="tasksPanel" class="flex-container-horiz" style="display: none; padding-top:100px"> 
+    <table>
+        <tr> 
+            <td> 
+                Max: Submission at: 10:30 
+           </td>
+           <td>
+               Ex.2 and Ex.3 kva sheet 4
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Ahmed: Submission at: 11:30 
+           </td>
+           <td>
+               Ex.4 and Ex.6 HCI sheet 5
+           </td>
+       </tr>
+       <tr>
+        <td>
+            Ahmed: Submission at: 11:30 
+        </td>
+        <td>
+            Ex.4 and Ex.6 GBS sheet 6
+        </td>
+    </tr>
+    </table>
+    </div>
+  </body>
+  <script>
+      
+      window.onload = function(){
+         var groupname = window.localStorage.getItem("name");
+         document.getElementById("groupname").innerHTML = "Groupname: " +groupname;
+         document.getElementById("subject").innerHTML = "Subject: Komplexität von Algorithmen";
+     }
+      function showInfo(){
+        document.getElementById("postsPanel").style.display = "none";
+          document.getElementById("infoPanel").style.display = "flex";
+          document.getElementById("tasksPanel").style.display = "none";
+          document.getElementById("filesPanel").style.display = "none";
+      }
+      function showPosts(){
+        document.getElementById("infoPanel").style.display = "none";
+        document.getElementById("postsPanel").style.display = "flex";
+        document.getElementById("tasksPanel").style.display = "none";
+        document.getElementById("filesPanel").style.display = "none";
+      }
+      function showFiles(){
+        document.getElementById("filesPanel").style.display = "flex";
+        document.getElementById("infoPanel").style.display = "none";
+        document.getElementById("postsPanel").style.display = "none";
+        document.getElementById("tasksPanel").style.display = "none";
+      }
+      function showTasks(){
+        document.getElementById("tasksPanel").style.display = "flex";
+        document.getElementById("infoPanel").style.display = "none";
+        document.getElementById("postsPanel").style.display = "none";
+        document.getElementById("filesPanel").style.display = "none";
+      }
+  </script>
+</html>
